@@ -2,11 +2,13 @@
 
 :root {
     --cor-primaria: #002E6D; /* Azul Marinho (Logo) */
-    --cor-secundaria: #FFB8C4; /* Rosa Pastel (CTA/Destaque) */
-    --cor-fundo: #FBF7F4; /* Bege Claro/Off-White */
+    --cor-secundaria: #f7ffb8; /* Rosa Pastel (CTA/Destaque) */
+    --cor-fundo: #f4fbfa; /* Bege Claro/Off-White */
     --cor-texto-principal: #333333;
     --cor-texto-suave: #6C757D; /* Cinza suave */
     --cor-sucesso: #28a745; /* Verde para sucesso */
+    --cor-opcional: #a0fffa;
+    --cor-opcional2: #52b8f7;
 }
 
 /* Configurações básicas */
@@ -122,7 +124,7 @@ h2 {
 
 .preco {
     font-size: 1.4em;
-    color: var(--cor-secundaria); /* Preço em destaque com a cor de incentivo */
+    color: var(--cor-texto-principal); /* Preço em destaque com a cor de incentivo */
     font-weight: bold;
     margin: 10px 0;
 }
@@ -213,4 +215,13 @@ footer {
     background-color: white;
     margin-bottom: 40px;
     border-radius: 15px;
+}
+
+.destaque {
+    background-color: var(--cor-opcional2); /* rosa pastel do tema */
+    color: var(--cor-primaria); /* texto azul escuro */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 46, 109, 0.1);
+    text-align: center;
 }
