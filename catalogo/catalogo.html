@@ -20,76 +20,70 @@
     </header>
 
     <main class="container">
-        <h2>Catálogo de Armações</h2>
+    <h2>Catálogo de Armações</h2>
 
-        <section class="filtros-busca">
-            <input type="text" id="barra-busca" placeholder="Buscar por código, cor ou modelo...">
+    <section class="filtros-busca">
+        <input type="text" id="barra-busca" placeholder="Buscar por código, cor ou modelo...">
+        <div class="filtros-opcoes">
+        <label for="filtro-material">Material:</label>
+        <select id="filtro-material">
+            <option value="">Todos</option>
+            <option value="acetato">Acetato</option>
+            <option value="metal">Metal</option>
+            <option value="titanio">Titânio</option>
+        </select>
 
-            <div class="filtros-opcoes">
-                <label for="filtro-material">Material:</label>
-                <select id="filtro-material">
-                    <option value="">Todos</option>
-                    <option value="acetato">Acetato</option>
-                    <option value="metal">Metal</option>
-                    <option value="titanio">Titânio</option>
-                </select>
+        <label for="filtro-genero">Gênero:</label>
+        <select id="filtro-genero">
+            <option value="">Todos</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="infantil">Infantil</option>
+        </select>
 
-                <label for="filtro-genero">Gênero:</label>
-                <select id="filtro-genero">
-                    <option value="">Todos</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="infantil">Infantil</option>
-                </select>
+        <label for="filtro-formato">Formato:</label>
+        <select id="filtro-formato">
+            <option value="">Todos</option>
+            <option value="quadrado">Quadrado</option>
+            <option value="redondo">Redondo</option>
+            <option value="gatinho">Gatinho</option>
+        </select>
+        </div>
+    </section>
 
-                <label for="filtro-formato">Formato:</label>
-                <select id="filtro-formato">
-                    <option value="">Todos</option>
-                    <option value="quadrado">Quadrado</option>
-                    <option value="redondo">Redondo</option>
-                    <option value="gatinho">Gatinho</option>
-                </select>
-            </div>
-        </section>
-
-        <section class="catalogo-produtos">
-            <div class="produtos-grid">
-                <div class="produto-card" 
-     data-material="acetato" 
-     data-genero="unissex" 
-     data-formato="quadrado">
-    
-     <section class="vitrine">
+    <section class="catalogo-produtos">
         <h2>Novidades em Destaque</h2>
         <div class="produtos-grid">
-            <div class="produto-card">
-                <img src="Armação3.jpeg" alt="Armação Clássica Preto Fosco">
-                <h3>Armação Modelo Alpha</h3>
-                <p class="preco">R$ 299,90</p>
-                <a href="produto_alpha.html" class="btn-detalhes">Ver Detalhes</a>
-            </div>
-            <div class="produto-card">
-                <img src="Armaçao2.webp" alt="Armação Infantil Rosa">
-                <h3>Modelo Kids Flex</h3>
-                <p class="preco">R$ 159,90</p>
-                <a href="produto_kids.html" class="btn-detalhes">Ver Detalhes</a>
-            </div>
-            <div class="produto-card">
-                <img src="Armação1.webp" alt="Armação Redonda Metal">
-                <h3>Modelo Beta Light</h3>
-                <p class="preco">R$ 349,90</p>
-                <a href="produto_beta.html" class="btn-detalhes">Ver Detalhes</a>
-            </div>
-            <div class="produto-card">
-                <img src="UrbanVision.webp" alt="Armação Urban Vision">
-                <h3>Urban Vision</h3>
-                <p class="preco">R$ 349,90</p>
-                <a href="produto_urban.html" class="btn-detalhes">Ver Detalhes</a>
-            </div>
+        <div class="produto-card">
+            <img src="Armação3.jpeg" alt="Armação Clássica Preto Fosco">
+            <h3>Armação Modelo Alpha</h3>
+            <p class="preco">R$ 299,90</p>
+            <a href="produto_alpha.html" class="btn-detalhes">Ver Detalhes</a>
         </div>
-     </section>
-    </main>
 
+        <div class="produto-card">
+            <img src="Armaçao2.webp" alt="Armação Infantil Rosa">
+            <h3>Modelo Kids Flex</h3>
+            <p class="preco">R$ 159,90</p>
+            <a href="produto_kids.html" class="btn-detalhes">Ver Detalhes</a>
+        </div>
+
+        <div class="produto-card">
+            <img src="Armação1.webp" alt="Armação Redonda Metal">
+            <h3>Modelo Beta Light</h3>
+            <p class="preco">R$ 349,90</p>
+            <a href="produto_beta.html" class="btn-detalhes">Ver Detalhes</a>
+        </div>
+
+        <div class="produto-card">
+            <img src="UrbanVision.webp" alt="Armação Urban Vision">
+            <h3>Urban Vision</h3>
+            <p class="preco">R$ 349,90</p>
+            <a href="produto_urban.html" class="btn-detalhes">Ver Detalhes</a>
+        </div>
+        </div>
+    </section>
+    </main>
     <footer>
         <div class="container">
             <p>&copy; 2025 Ótica Carol. | Entre em Contato: (XX) XXXX-XXXX</p>
