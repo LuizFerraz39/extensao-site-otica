@@ -1,0 +1,216 @@
+/* style.css - Design Sofisticado e Pastel */
+
+:root {
+    --cor-primaria: #002E6D; /* Azul Marinho (Logo) */
+    --cor-secundaria: #FFB8C4; /* Rosa Pastel (CTA/Destaque) */
+    --cor-fundo: #FBF7F4; /* Bege Claro/Off-White */
+    --cor-texto-principal: #333333;
+    --cor-texto-suave: #6C757D; /* Cinza suave */
+    --cor-sucesso: #28a745; /* Verde para sucesso */
+}
+
+/* Configurações básicas */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header e Navegação */
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: white; /* Mantém “Ótica” em branco */
+    font-size: 2rem;
+}
+
+/* Destaque amarelo apenas na palavra “Carol” */
+header h1 .destaque {
+    color: yellow;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Botões de Chamada para Ação (CTA) */
+.btn-cta, .btn-detalhes {
+    display: inline-block;
+    background-color: var(--cor-secundaria); /* Rosa Pastel que incentiva o consumo */
+    color: var(--cor-primaria); /* Texto em azul escuro no CTA */
+    font-weight: bold;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px; /* Borda mais suave e moderna */
+    margin-top: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.btn-cta:hover, .btn-detalhes:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    color: var(--cor-secundaria);
+}
+
+/* Seções e Títulos */
+h2 {
+    font-size: 2.2em;
+    color: var(--cor-primaria);
+    margin-bottom: 30px;
+}
+
+/* Vitrine de Produtos e Cards */
+.vitrine, .catalogo-produtos {
+    padding: 60px 0;
+    text-align: center;
+}
+
+
+
+.produtos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.produto-card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid rgba(0, 46, 109, 0.1); /* Borda suave do azul marinho */
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 8px 15px rgba(0, 46, 109, 0.05);
+    transition: transform 0.3s;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 46, 109, 0.1);
+}
+
+.produto-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.preco {
+    font-size: 1.4em;
+    color: var(--cor-secundaria); /* Preço em destaque com a cor de incentivo */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Seção de Busca e Filtros */
+.filtros-busca {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+#barra-busca {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.filtros-opcoes select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 15px;
+    background-color: white;
+}
+
+/* Detalhes do Produto */
+.detalhes-produto {
+    display: flex;
+    gap: 40px;
+    padding: 40px 0;
+    text-align: left;
+}
+
+.galeria-fotos {
+    flex: 1;
+}
+
+.foto-principal {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-produto {
+    flex: 1;
+}
+
+.preco-grande {
+    font-size: 2.5em;
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+.caracteristicas ul {
+    list-style: none;
+    padding: 0;
+}
+
+.caracteristicas li {
+    padding: 5px 0;
+    color: var(--cor-texto-suave);
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    font-size: 0.9em;
+}
+
+/* Outros ajustes */
+.banner-destaque {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 40px;
+    border-radius: 15px;
+}
