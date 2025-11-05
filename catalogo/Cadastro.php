@@ -49,7 +49,7 @@
 
                 <div class="form-grupo">
                     <label for="genero">Gênero:</label>
-                    <select id="genero" name="genero" required>
+                    <select type="text" id="genero" name="genero" required>
                         <option value="">Selecione</option>
                         <option value="masculino">Masculino</option>
                         <option value="feminino">Feminino</option>
@@ -60,7 +60,7 @@
 
                 <div class="form-grupo">
                     <label for="formato">Formato:</label>
-                    <select id="formato" name="formato" required>
+                    <select type="texte" id="formato" name="formato" required>
                         <option value="">Selecione</option>
                         <option value="quadrado">Quadrado</option>
                         <option value="redondo">Redondo</option>
@@ -73,7 +73,7 @@
 
                 <div class="form-grupo">
                     <label for="preco">Preço (R$):</label>
-                    <input type="number" id="preco" name="preco" placeholder="Ex: 299.90" step="0.00" required>
+                    <input type="text" id="preco" name="preco" placeholder="Ex: 299.90" step="0.00" required>
                 </div>
 
                 <div class="form-grupo">
