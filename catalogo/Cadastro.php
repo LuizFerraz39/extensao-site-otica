@@ -13,6 +13,11 @@
 
         $result = mysqli_query($conexao, "INSERT INTO oculos(codigo,modelo,material,genero,formato,preco,imagem,descricao) 
         VALUES ('$codigo','$modelo','$material','$genero','$formato','$preco','$imagem','$descricao')");
+
+        if($result){
+            header("Location: cadastro.php?success=1");
+            exit;
+        }
     }
 ?>
 
@@ -26,11 +31,12 @@
 </head>
 
 <body style="background-color: #002E6D">
+    
     <main class="container">
         <section class="destaque">
             <h2>Cadastro de armação</h2>
             <p>Selecione as opções para registrar a nova armação</p>
-                       <form id="form-cadastro">
+            <form id="form-cadastro" action="cadastro.php" method="POST">
                 <div class="form-grupo">
                     <label for="codigo">Código do Produto:</label>
                     <input type="text" id="codigo" name="codigo" placeholder="Ex: MOD-123" required>
@@ -49,7 +55,7 @@
 
                 <div class="form-grupo">
                     <label for="genero">Gênero:</label>
-                    <select type="text" id="genero" name="genero" required>
+                    <select id="genero" name="genero" required>
                         <option value="">Selecione</option>
                         <option value="masculino">Masculino</option>
                         <option value="feminino">Feminino</option>
@@ -60,7 +66,7 @@
 
                 <div class="form-grupo">
                     <label for="formato">Formato:</label>
-                    <select type="texte" id="formato" name="formato" required>
+                    <select id="formato" name="formato" required>
                         <option value="">Selecione</option>
                         <option value="quadrado">Quadrado</option>
                         <option value="redondo">Redondo</option>
@@ -73,7 +79,7 @@
 
                 <div class="form-grupo">
                     <label for="preco">Preço (R$):</label>
-                    <input type="text" id="preco" name="preco" placeholder="Ex: 299.90" step="0.00" required>
+                    <input type="text" id="preco" name="preco" placeholder="Ex: 299.90">
                 </div>
 
                 <div class="form-grupo">
@@ -86,12 +92,14 @@
                     <textarea type="text" id="descricao" name="descricao" placeholder="Breve descrição do produto..."></textarea>
                 </div>
 
-                <input type="submit" name="submit" id="submit" class="btn-cta">Cadastrar Produto</input>
+                <input type="submit" name="submit" id="submit" class="btn-cta" value="Cadastrar Produto">
             </form>
 
-            <p id="mensagem-sucesso" style="display:none; margin-top:20px; color:green; font-weight:bold;">
-                ✅ Produto cadastrado com sucesso! (Simulação)
+            <?php if(isset($_GET['success'])): ?>
+            <p style="margin-top:20px; color:green; font-weight:bold;">
+                ✅ Produto cadastrado com sucesso!
             </p>
+            <?php endif; ?>
         </section>
     </main>
 
@@ -104,21 +112,9 @@
     <!-- Rodapé -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Ótica Carol. | Entre em Contato: (XX) XXXX-XXXX</p>
+            <p>&copy; 2025 Ótica Carol. | Entre em Contato: (81) 9494-5322</p>
         </div>
     </footer>
-
-    <script>
-        const formCadastro = document.getElementById('form-cadastro');
-        const mensagemSucesso = document.getElementById('mensagem-sucesso');
-
-        formCadastro.addEventListener('submit', (e) => {
-            e.preventDefault();
-            mensagemSucesso.style.display = 'block';
-            formCadastro.reset();
-            window.scrollTo({ top: mensagemSucesso.offsetTop - 100, behavior: 'smooth' });
-        });
-    </script>
 
 </body>
 </html>

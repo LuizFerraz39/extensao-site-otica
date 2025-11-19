@@ -3,22 +3,19 @@
 #include <string.h>
 #include <errno.h>
 
-// Função auxiliar para extrair a extensão do nome do arquivo
 const char* extrair_extensao(const char *filename) {
     const char *dot = strrchr(filename, '.');
     
-    // Se não encontrar ponto, ou se o ponto for o primeiro caractere (ex: ".config"), 
-    // retorna uma string vazia ou NULL, dependendo da necessidade.
     if (!dot || dot == filename) {
         return ""; // Retorna string vazia se não tiver extensão válida
     }
     
-    // Retorna o ponteiro para o caractere imediatamente após o último ponto
+     // Retorna o ponteiro para o caractere imediatamente após o último ponto
     return dot + 1; 
 }
 
 
-void abrir_e_verificar_tipo() {
+void funcaodourada() {
     DIR *dir;
     struct dirent *entry;
     const char *path = "."; 
@@ -31,7 +28,9 @@ void abrir_e_verificar_tipo() {
 
     printf("Processando arquivos na pasta '%s':\n", path);
 
-    FILE *Dourado = fopen("ArquivoDourado.txt", "wb");
+    FILE *Dourado = fopen("ArquivoDourado_Primitivo.txt", "wb");
+
+    char codigo_old [1024] = "";
 
     while ((entry = readdir(dir)) != NULL) {
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
@@ -47,9 +46,14 @@ void abrir_e_verificar_tipo() {
 
         int size_cod = size_org - size_ext - 1;
 
-
         strncpy(codigo, nome_completo, size_cod);
         codigo[size_cod] = '\0';
+
+        if ((strcmp(codigo, codigo_old)) == 0){
+            continue;
+        }
+        strncpy(codigo_old, codigo, size_cod);
+        codigo_old[size_cod] = '\0';
 
         fputs(codigo, Dourado);
         fputs("||||||", Dourado);
@@ -61,6 +65,6 @@ void abrir_e_verificar_tipo() {
 }
 
 int main() {
-    abrir_e_verificar_tipo();
+    funcaodourada();
     return 0;
 }

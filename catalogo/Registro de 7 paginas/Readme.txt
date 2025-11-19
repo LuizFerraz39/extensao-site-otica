@@ -1,4 +1,10 @@
-Jogue o ler_o_drive.c e execute ele na pasta com as imagens
-Ele ira criar um arquivo chamado ArquivoDourado.txt
-Execute o ler_o_drive2.py e ele ira criar um ArquivoDourado_Corrijido.txt
-Renomee esse arquivo corrijido para ArquivoDourado.txt
+Para ler a coleção de fotos, coloque os dois arquivos:
+ler_o_drive.exe e ler_o_drive.py na mesma pasta que as fotos
+
+Depois execute eles, primeiramente o ler_o_drive.exe depois o .py
+
+Para fazer isso usando o terminal:
+Entre no diretorio da pasta (Pelo gitbash, você pode arrastar a pasta para o terminal)
+Use o comando "./ler_o_drive.exe"
+Use o comando "python3 ler_o_drive.py"
+
