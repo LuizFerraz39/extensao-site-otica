@@ -1,7 +1,8 @@
 <?php
+    include_once('config.php');
+
     if(isset($_POST['submit'])) {    
-        include_once('config.php');
-        
+
         $codigo = $_POST['codigo'];
         $modelo = $_POST['modelo'];
         $material = $_POST['material'];
@@ -11,13 +12,43 @@
         $imagem = $_POST['imagem'];
         $descricao = $_POST['descricao'];
 
-        $result = mysqli_query($conexao, "INSERT INTO oculos(codigo,modelo,material,genero,formato,preco,imagem,descricao) 
-        VALUES ('$codigo','$modelo','$material','$genero','$formato','$preco','$imagem','$descricao')");
+        $query = "INSERT INTO oculos(codigo,modelo,material,genero,formato,preco,imagem,descricao)
+                  VALUES ('$codigo','$modelo','$material','$genero','$formato','$preco','$imagem','$descricao')";
 
-        if($result){
-            header("Location: cadastro.php?success=1");
-            exit;
+        mysqli_query($conexao, $query);
+    }
+
+
+
+    if(isset($_POST['importar_txt'])) {
+
+        $arquivo = "ArquivoDourado.txt";   
+        $linhas = file($arquivo);
+    
+        foreach ($linhas as $linha) {
+    
+            $dados = array_map('trim', explode("|", $linha));
+    
+            while (count($dados) < 8) {
+                $dados[] = "";
+            }
+    
+            $codigo     = $dados[0];
+            $modelo     = $dados[1];
+            $material   = $dados[2];
+            $genero     = $dados[3];
+            $formato    = $dados[4];
+            $preco      = $dados[5];
+            $imagem     = $dados[6];
+            $descricao  = $dados[7];
+    
+            $sql = "INSERT INTO oculos (codigo, modelo, material, genero, formato, preco, imagem, descricao)
+                    VALUES ('$codigo', '$modelo', '$material', '$genero', '$formato', '$preco', '$imagem', '$descricao')";
+    
+            mysqli_query($conexao, $sql);
         }
+    
+        echo "<p style='color:green; font-weight:bold;'>Importação via TXT concluída com sucesso!</p>";
     }
 ?>
 
@@ -36,7 +67,7 @@
         <section class="destaque">
             <h2>Cadastro de armação</h2>
             <p>Selecione as opções para registrar a nova armação</p>
-            <form id="form-cadastro" action="cadastro.php" method="POST">
+            <form id="form-cadastro" action="CadastroArquivo.php" method="POST">
                 <div class="form-grupo">
                     <label for="codigo">Código do Produto:</label>
                     <input type="text" id="codigo" name="codigo" placeholder="Ex: MOD-123" required>
@@ -93,6 +124,10 @@
                 </div>
 
                 <input type="submit" name="submit" id="submit" class="btn-cta" value="Cadastrar Produto">
+            </form>
+
+            <form action="CadastroArquivo.php" method="POST" style="margin-top:20px;">
+                <input type="submit" name="importar_txt" class="btn-cta" value="Importar Produtos do TXT">
             </form>
 
             <?php if(isset($_GET['success'])): ?>
